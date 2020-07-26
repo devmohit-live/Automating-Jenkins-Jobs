@@ -25,7 +25,7 @@ threshold("SUCCESS")
 }  
 steps{
 shell("cd /root/data")
-shell("if sudo ls | grep php; then; sudo kubectl run php23 --image=php:latest; sudo kubectl expose pods pods/php23 --port=80 --type=NodePort; sudo kubectl cp /root/data php23:/usr/src/myapp; else; sudo kubectl run html12 --image=httpd:latest; sudo kubectl expose pods html12 --port=80 --type=NodePort; sudo kubectl cp /root/data html12:/usr/local/apache2/htdocs; fi")
+shell("if sudo ls | grep php; then; sudo kubectl run myweb --image=php:latest; sudo kubectl expose pods myweb --port=80 --type=NodePort; sudo kubectl cp /root/data myweb:/usr/src/myapp; else; sudo kubectl run myweb --image=httpd:latest; sudo kubectl expose pods myweb --port=80 --type=NodePort; sudo kubectl cp /root/data myweb:/usr/local/apache2/htdocs; fi")
 }  
 }
 
